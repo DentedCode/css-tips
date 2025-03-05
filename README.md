@@ -19,7 +19,7 @@ All the tutorial show this tips and more is uploade to Dented Code Youtube chann
 
 At Dented Code, we have developed an innovative coding Bootcamp approach to empower candidates with cutting-edge technology and skills to thrive in the global multi-billion digital economy. In 2021, Dented Code started transferring those programming skills to students through BootCamp courses, in-school workshops, community upskill initiatives as well as online tutorials. Through DentedCode’s BootCamp, students get equipped with in-demand coding and web development skills for real-world challenges. Dented Code not only harnesses students with skill sets to ace real-life challenges but also provides industry connections with career support.
 
-If you are looking for a fastest and easiest path to become a professional software developer, we can help. Enrol in our one of the most effective online course. ([Lear More](https://dentedcode.com/bootcamp/fullstack_development){:target="\_blank"}) or contact us today!
+If you are looking for a fastest and easiest path to become a professional software developer, we can help. Enrol in our one of the most effective online course. ([Lear More](https://dentedcode.com/bootcamp/fullstack_development)) or contact us today!
 
 ## About the Project
 
