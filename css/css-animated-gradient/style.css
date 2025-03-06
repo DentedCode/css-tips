@@ -1,0 +1,32 @@
+body {
+  font-size: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.gradient {
+  background: linear-gradient(
+    -45deg,
+    rgba(255, 166, 0, 0.618),
+    rgba(255, 0, 0, 0.529),
+    rgba(0, 0, 255, 0.503),
+    rgba(0, 128, 0, 0.491)
+  );
+  color: white;
+  animation: gradient 4s ease infinite;
+  background-size: 300% 300%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
