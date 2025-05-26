@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Pricing Toggle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white min-h-screen flex flex-col items-center justify-center p-6 font-sans"
+  >
+    <!-- Toggle Switch -->
+    <div class="flex items-center mb-10 space-x-3">
+      <span class="text-sm">Monthly</span>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="billingToggle" class="sr-only peer" />
+        <div
+          class="w-14 h-7 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:bg-purple-600 transition-all duration-300"
+        ></div>
+        <div
+          class="absolute left-0.5 top-0.5 w-6 h-6 bg-white rounded-full transition-all duration-300 peer-checked:translate-x-7"
+        ></div>
+      </label>
+      <span class="text-sm">Yearly</span>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl"
+      id="pricingCards"
+    >
+      <!-- Card Template (repeated 3 times with JS data) -->
+    </div>
+
+    <script>
+      const cardData = [
+        { title: "Basic", monthly: 9, yearly: 90 },
+        { title: "Pro", monthly: 19, yearly: 190 },
+        { title: "Premium", monthly: 29, yearly: 290 },
+      ];
+
+      const pricingCards = document.getElementById("pricingCards");
+      const billingToggle = document.getElementById("billingToggle");
+
+      function renderCards(isYearly) {
+        pricingCards.innerHTML = "";
+        cardData.forEach((plan, index) => {
+          const price = isYearly ? plan.yearly : plan.monthly;
+          const duration = isYearly ? "/year" : "/month";
+
+          const card = document.createElement("div");
+          card.className = `
+          bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-6 transition duration-500 transform hover:scale-105
+          shadow-xl hover:shadow-purple-500/30
+        `;
+
+          card.innerHTML = `
+          <h3 class="text-xl font-semibold text-purple-400 mb-2">${plan.title}</h3>
+          <div class="text-4xl font-bold mb-4 transition-all duration-300 ease-in-out">
+            $<span class="price">${price}</span><span class="text-sm font-medium text-gray-400">${duration}</span>
+          </div>
+          <ul class="text-gray-400 text-sm space-y-2 mb-6">
+            <li>✔ Feature A</li>
+            <li>✔ Feature B</li>
+            <li>✔ Feature C</li>
+          </ul>
+          <button class="w-full py-2 bg-purple-600 hover:bg-purple-700 transition rounded-lg font-semibold">Choose Plan</button>
+        `;
+
+          pricingCards.appendChild(card);
+        });
+      }
+
+      // Initial Render
+      renderCards(false);
+
+      billingToggle.addEventListener("change", (e) => {
+        const isYearly = e.target.checked;
+        renderCards(isYearly);
+      });
+    </script>
+  </body>
+</html>
